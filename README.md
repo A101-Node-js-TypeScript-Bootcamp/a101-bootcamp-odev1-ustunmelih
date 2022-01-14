@@ -53,4 +53,23 @@ server.listen(port, () => {
 console.log(`Sunucu ${port} 'portununda çalisiyor`)
 })
 
+## Express.js kullanarak server kurulumu
+
+Express.js bir Node.js paketidir ve web uygulama sunucu çatısı oluşturmamızda çeşitli kolaylıklar sağlar.Bu paketi kullanırken kodlama konusunda kolaylıklar sağlar.Route yöntemiyle web istekleri yönetilebilir.Populer veritabanı uygulamları ile uyumlu geliştirme ortamı sunar ve farklı uygulamalar için REST API oluşturmak mümkün hale gelmiştir.Node js çalışma ortamına Express paketi eklemek için konsol üzerinde "npm install express" çalıştırmamız yeterli olucaktır.Yülenenen tüm paketler gibi node_modules klasöründe kayıtları tutulacaktır.Express.js ile server oluşturma işlemi aşaıdaki şekildedir
+
 ##
+
+const express = require('express')
+
+const app = express()
+
+app.get('/', (req, res) => {
+
+res.send('Anasayfadasiniz')
+
+res.end()
+})
+
+app.listen(3000, () => {
+console.log('Uygulama 3000 portununda çalisiyor')
+})
