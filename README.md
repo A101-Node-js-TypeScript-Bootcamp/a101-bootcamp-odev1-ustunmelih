@@ -21,20 +21,28 @@ Node js, Google Chrome webV8 isimli bir javascript motoru üzerinde V8 isimli bi
 ## Paket kullanmadan server kurulumu
 
 ilk olarak http protokolü oluşturuyoruz"const http = require('http')".Daha sonra server kurulumu için server isimli değişken oluşturup callback fonksiyonu oluşturup içerisine req"request" ve res"response" isimli parametreler veriyoruz.
-Ardından url değişkeni oluşturup requeste atıyoruz"const url = req.url".Sonrasında vermek istediğimiz responsu "res.write('')"ile geri dödürüp taleplerimizi url üzerinde iletebiliyoruz.Burada önemli nokta respose kod blou içerisinde sonlandırmak ve sayfanın talebi yerine getirdikten sonra işlemin sonlandırıldığını bildirmek .Sonrasında listen ile portu dinlemek için localhost host üzerinde 3000 portunu adresliyoruz ve tarayıcımız üzerinde "http://localhost:3000/ " olarak giriş yaptığımızda taleplerimizi sunucu üzerinde gösterebiliriz.Örneğin..
+Ardından url değişkeni oluşturup requeste atıyoruz"const url = req.url".Sonrasında vermek istediğimiz responsu "res.write('')"ile geri dödürüp taleplerimizi url üzerinde iletebiliyoruz.Burada önemli nokta respose kod blogu içerisinde sonlandırmak ve sayfanın talebi yerine getirdikten sonra işlemin sonlandırıldığını bildirmek .Sonrasında listen ile portu dinlemek için localhost host üzerinde 3000 portunu adresliyoruz ve tarayıcımız üzerinde "http://localhost:3000/ " olarak giriş yaptığımızda taleplerimizi sunucu üzerinde gösterebiliriz.Örneğin..
 
 ##
 
 const http = require('http')
 
 const server = http.createServer((req, res) => {
+
 const url = req.url
+
 if (url === '/') {
+
 res.write('ana sayfa')
+
 } else if (url === '/add') {
+
 res.write('ekleme sayfasi')
+
 } else {
+
 res.write('sayfa bukunamadi')
+
 }
 res.end()
 })
